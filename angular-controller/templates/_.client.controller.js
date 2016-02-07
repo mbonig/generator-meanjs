@@ -1,8 +1,12 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('<%= slugifiedModuleName %>').controller('<%= classifiedControllerName %>Controller', ['$scope',
-  function ($scope) {
-    // <%= humanizedControllerName %> controller logic
-    // ...
+  angular.module('<%= slugifiedModuleName %>').controller('<%= classifiedControllerName %>Controller', <%= classifiedControllerName %>Controller);
+
+  <%= classifiedControllerName %>Controller.$inject = ['$scope'];
+
+  function  <%= classifiedControllerName %>Controller ($scope){
+
   }
-]);
+
+})();

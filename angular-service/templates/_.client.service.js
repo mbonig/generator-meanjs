@@ -1,15 +1,20 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('<%= slugifiedModuleName %>').factory('<%= classifiedName %>', [
-  function () {
-    // <%= humanizedName %> service logic
-    // ...
+    angular.module('<%= slugifiedModuleName %>').factory('<%= classifiedName %>',<%= classifiedName %>);
 
-    // Public API
-    return {
-      someMethod: function () {
-        return true;
-      }
-    };
-  }
-]);
+    <%= classifiedName %>.$inject = [];
+
+    function <%= classifiedName %>() {
+      // <%= humanizedName %> service logic
+      // ...
+
+      // Public API
+      return {
+        someMethod: function () {
+          return true;
+        }
+      };
+    }
+
+})();
