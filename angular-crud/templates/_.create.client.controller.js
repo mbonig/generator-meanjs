@@ -5,11 +5,11 @@
     .module('<%= slugifiedModuleName %>')
     .controller('<%= classifiedControllerName %>CreateController', <%= classifiedControllerName %>CreateController);
 
-  <%= classifiedControllerName %>CreateController.$inject = ['$scope','$state'];
+  <%= classifiedControllerName %>CreateController.$inject = ['$scope','$state', '<%= classifiedName %>'];
 
-  function <%= classifiedControllerName %>CreateController($scope, $state) {
+  function <%= classifiedControllerName %>CreateController($scope, $state, <%= classifiedName %>) {
     var vm = this;
-    vm.<%= slugifiedModuleName %> = {};
+    vm.<%= slugifiedModuleName %> = new <%= classifiedName %>();
     vm.save = save;
 
     init();
@@ -18,7 +18,7 @@
     }
 
     function save(){
-      vm.<%= slugifiedModuleName %>.save(function(updated){
+      vm.<%= slugifiedModuleName %>.$save(function(updated){
         $state.go('<%= slugifiedModuleName %>.list');
       });
     }

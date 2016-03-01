@@ -5,15 +5,15 @@
     .module('<%= slugifiedModuleName %>')
     .controller('<%= classifiedControllerName %>ViewController', <%= classifiedControllerName %>ViewController);
 
-  <%= classifiedControllerName %>ViewController.$inject = ['$scope'];
+  <%= classifiedControllerName %>ViewController.$inject = ['$scope','$stateParams'];
 
-  function <%= classifiedControllerName %>ViewController($scope) {
+  function <%= classifiedControllerName %>ViewController($scope, $stateParams) {
     var vm = this;
-    vm.<%= slugifiedModuleName %> = {};
+    vm.<%= slugifiedModuleName %> = <%= classifiedName %>.get({<%= slugifiedName %>Id: $stateParams.<%= slugifiedName %>Id});
     init();
 
     function init() {
-      // todo: add service code that gets this from the server
+
     }
   }
 })();

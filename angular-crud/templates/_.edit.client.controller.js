@@ -5,20 +5,21 @@
     .module('<%= slugifiedModuleName %>')
     .controller('<%= classifiedControllerName %>EditController', <%= classifiedControllerName %>EditController);
 
-  <%= classifiedControllerName %>EditController.$inject = ['$scope','$state'];
+  <%= classifiedControllerName %>EditController.$inject = ['$scope','$state','$stateParams', '<%= classifiedName %>'];
 
-  function <%= classifiedControllerName %>EditController($scope, $state) {
+  function <%= classifiedControllerName %>EditController($scope, $state, $stateParams, <%= classifiedName %>) {
     var vm = this;
-    vm.<%= slugifiedModuleName %> = {};
+    vm.<%= slugifiedModuleName %> = <%= classifiedName %>.get({<%= slugifiedName %>Id: $stateParams.<%= slugifiedName %>Id});
     vm.save = save;
 
     init();
 
     function init() {
+
     }
 
     function save(){
-      vm.<%= slugifiedModuleName %>.save(function(updated){
+      vm.<%= slugifiedModuleName %>.update(function(updated){
         $state.go('<%= slugifiedModuleName %>.list');
       });
     }
