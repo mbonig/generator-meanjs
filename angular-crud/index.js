@@ -94,7 +94,10 @@ var ViewGenerator = yeoman.generators.Base.extend({
         this.template('_.create.client.view.html', 'modules/' + this.slugifiedModuleName + '/client/views/' + this.slugifiedViewName + '.create.client.view.html');
         this.template('_.view.client.view.html', 'modules/' + this.slugifiedModuleName + '/client/views/' + this.slugifiedViewName + '.view.client.view.html');
 
-        this.template('_.service.js', 'modules/' + this.slugifiedModuleName + '/client/services/' + this.slugifiedViewName + '.service.js')
+        this.template('_.service.js', 'modules/' + this.slugifiedModuleName + '/client/services/' + this.slugifiedViewName + '.service.js');
+
+        this.template('_.client.config.js', 'modules/' + this.slugifiedModuleName + '/client/config/' + this.slugifiedName + '.client.config.js')
+
     }
 });
 
