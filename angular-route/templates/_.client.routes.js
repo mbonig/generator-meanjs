@@ -1,18 +1,21 @@
 (function () {
-    'use strict';
+  'use strict';
 
-//Setting up route
-    angular.module('<%= slugifiedModuleName %>').config(Config);
+  //Setting up route
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .config(routeConfig);
 
-    Config.$inject = ['$stateProvider'];
-    function Config($stateProvider) {
+  routeConfig.$inject = ['$stateProvider'];
+
+  function routeConfig($stateProvider) {
         // <%= humanizedModuleName %> state routing
         $stateProvider
             .state('<%= slugifiedName %>', {
                 url: '/<%= slugifiedRoutePath %>',
-                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedViewName %>.client.view.html',
-                controller: '<%= classifiedControllerName %>Controller',
-                controllerAs: 'vm'
+        templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedViewName %>.client.view.html',
+        controller: '<%= classifiedControllerName %>Controller',
+        controllerAs: 'vm'
             });
     }
 })();

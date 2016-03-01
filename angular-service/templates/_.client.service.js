@@ -1,11 +1,13 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular.module('<%= slugifiedModuleName %>').factory('<%= classifiedName %>',<%= classifiedName %>);
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .factory('<%= slugifiedModuleName %>Service', <%= slugifiedModuleName %>Service);
 
-    <%= classifiedName %>.$inject = [];
+  <%= slugifiedModuleName %>Service.$inject = [/*Example: '$state', '$window' */];
 
-    function <%= classifiedName %>() {
+  function <%= slugifiedModuleName %>Service(/*Example: $state, $window */) {
       // <%= humanizedName %> service logic
       // ...
 

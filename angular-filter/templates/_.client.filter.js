@@ -1,12 +1,13 @@
 (function () {
   'use strict';
 
-  angular.module('<%= slugifiedModuleName %>').filter('<%= camelizedName %>', <%= camelizedName %>);
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .filter('<%= camelizedName %>', <%= camelizedName %>);
 
+  <%= camelizedName %>.$inject = [/*Example: '$state', '$window' */];
 
-  <%= camelizedName %>.$inject =[];
-
-  function <%= camelizedName %>() {
+  function <%= camelizedName %>(/*Example: $state, $window */) {
     return function (input) {
       // <%= humanizedName %> directive logic
       // ...

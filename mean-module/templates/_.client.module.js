@@ -1,6 +1,5 @@
-(function () {
-    'use strict';
+(function (app) {
+  'use strict';
 
-// Use application configuration module to register a new module
-    ApplicationConfiguration.registerModule('<%= slugifiedName %>');
-})();
+  app.registerModule('<%= slugifiedName %>');
+})(ApplicationConfiguration);

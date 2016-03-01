@@ -1,11 +1,13 @@
 (function () {
   'use strict';
 
-  angular.module('<%= slugifiedModuleName %>').directive('<%= camelizedName %>', <%= camelizedName %>);
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .directive('<%= camelizedName %>', <%= camelizedName %>);
 
-  <%= camelizedName %>.$inject = [];
+  <%= camelizedName %>.$inject = [/*Example: '$state', '$window' */];
 
-    function <%= camelizedName %>() {
+  function <%= camelizedName %>(/*Example: $state, $window */) {
       return {
         template: '<div></div>',
         restrict: 'E',

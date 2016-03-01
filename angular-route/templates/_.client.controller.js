@@ -1,15 +1,21 @@
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    angular.module('<%= slugifiedModuleName %>').controller('<%= classifiedControllerName %>Controller',
-        <%= classifiedControllerName %>Controller);
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .controller('<%= classifiedControllerName %>Controller', <%= classifiedControllerName %>Controller);
 
+  <%= classifiedControllerName %>Controller.$inject = ['$scope'];
 
-    <%= classifiedControllerName %>Controller.$inject =  ['$scope'];
+  function <%= classifiedControllerName %>Controller($scope) {
+    var vm = this;
 
-
-    function <%= classifiedControllerName %>Controller($scope) {
-      // Controller Logic
+    // <%= humanizedControllerName %> controller logic
       // ...
+
+    init();
+
+    function init() {
     }
+  }
 })();

@@ -1,12 +1,14 @@
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    // <%= humanizedModuleName %> module config
-    angular.module('<%= slugifiedModuleName %>').run(Config);
+  // <%= humanizedModuleName %> module config
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .run(menuConfig);
 
-    Config.$inject = ['Menus'];
+  menuConfig.$inject = ['Menus'];
 
-    function Config(Menus) {
+  function menuConfig(Menus) {
     }
 
 })();
