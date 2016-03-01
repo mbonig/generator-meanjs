@@ -3,13 +3,13 @@
 
   angular
     .module('<%= slugifiedModuleName %>')
-    .controller('<%= classifiedControllerName %>ListController', <%= classifiedControllerName %>ListController);
+    .controller('<%= classifiedName %>ListController', <%= classifiedName %>ListController);
 
-  <%= classifiedControllerName %>ListController.$inject = ['$scope','<%= classifiedName %>'];
+  <%= classifiedName %>ListController.$inject = ['$scope','<%= classifiedName %>'];
 
-  function <%= classifiedControllerName %>ListController($scope, <%= classifiedName %>) {
+  function <%= classifiedName %>ListController($scope, <%= classifiedName %>) {
     var vm = this;
-    vm.<%= slugifiedModuleName %>s = <%= classifiedName %>.query();
+    vm.<%= slugifiedName %>s = <%= classifiedName %>.query();
 
     init();
 

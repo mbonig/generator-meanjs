@@ -3,13 +3,13 @@
 
   angular
     .module('<%= slugifiedModuleName %>')
-    .controller('<%= classifiedControllerName %>ViewController', <%= classifiedControllerName %>ViewController);
+    .controller('<%= classifiedName %>ViewController', <%= classifiedName %>ViewController);
 
-  <%= classifiedControllerName %>ViewController.$inject = ['$scope','$stateParams'];
+  <%= classifiedName %>ViewController.$inject = ['$scope','$stateParams'];
 
-  function <%= classifiedControllerName %>ViewController($scope, $stateParams) {
+  function <%= classifiedName %>ViewController($scope, $stateParams) {
     var vm = this;
-    vm.<%= slugifiedModuleName %> = <%= classifiedName %>.get({<%= slugifiedName %>Id: $stateParams.<%= slugifiedName %>Id});
+    vm.<%= slugifiedName %> = <%= classifiedName %>.get({<%= slugifiedName %>Id: $stateParams.<%= slugifiedName %>Id});
     init();
 
     function init() {

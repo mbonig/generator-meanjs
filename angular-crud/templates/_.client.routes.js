@@ -9,7 +9,7 @@
     routeConfig.$inject = ['$stateProvider'];
 
     function routeConfig($stateProvider) {
-        // <%= humanizedModuleName %> state routing
+        // <%= humanizedName %> state routing
         $stateProvider
             .state('<%= slugifiedName %>', {
                 url: '/<%= slugifiedRoutePath %>',
@@ -18,26 +18,26 @@
             })
             .state('<%= slugifiedName %>.list', {
                 url: '/',
-                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedModuleName %>.list.client.view.html',
-                controller: '<%= classifiedControllerName %>ListController',
+                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedName %>.list.client.view.html',
+                controller: '<%= classifiedName %>ListController',
                 controllerAs: 'vm'
             })
             .state('<%= slugifiedName %>.edit', {
                 url: '/edit/:<%= slugifiedModuleName %>Id',
-                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedModuleName %>.edit.client.view.html',
-                controller: '<%= classifiedControllerName %>EditController',
+                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedName %>.edit.client.view.html',
+                controller: '<%= classifiedName %>EditController',
                 controllerAs: 'vm'
             })
             .state('<%= slugifiedName %>.create', {
                 url: '/create',
-                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedModuleName %>.create.client.view.html',
-                controller: '<%= classifiedControllerName %>CreateController',
+                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedName %>.create.client.view.html',
+                controller: '<%= classifiedName %>CreateController',
                 controllerAs: 'vm'
             })
             .state('<%= slugifiedName %>.view', {
                 url: '/view/:<%= slugifiedModuleName %>Id',
-                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedModuleName %>.view.client.view.html',
-                controller: '<%= classifiedControllerName %>ViewController',
+                templateUrl: 'modules/<%= slugifiedModuleName %>/client/views/<%= slugifiedName %>.view.client.view.html',
+                controller: '<%= classifiedName %>ViewController',
                 controllerAs: 'vm'
             });
     }

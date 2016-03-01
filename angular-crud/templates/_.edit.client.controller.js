@@ -3,11 +3,11 @@
 
   angular
     .module('<%= slugifiedModuleName %>')
-    .controller('<%= classifiedControllerName %>EditController', <%= classifiedControllerName %>EditController);
+    .controller('<%= classifiedName %>EditController', <%= classifiedName %>EditController);
 
-  <%= classifiedControllerName %>EditController.$inject = ['$scope','$state','$stateParams', '<%= classifiedName %>'];
+  <%= classifiedName %>EditController.$inject = ['$scope','$state','$stateParams', '<%= classifiedName %>'];
 
-  function <%= classifiedControllerName %>EditController($scope, $state, $stateParams, <%= classifiedName %>) {
+  function <%= classifiedName %>EditController($scope, $state, $stateParams, <%= classifiedName %>) {
     var vm = this;
     vm.<%= slugifiedModuleName %> = <%= classifiedName %>.get({<%= slugifiedName %>Id: $stateParams.<%= slugifiedName %>Id});
     vm.save = save;
@@ -19,8 +19,8 @@
     }
 
     function save(){
-      vm.<%= slugifiedModuleName %>.update(function(updated){
-        $state.go('<%= slugifiedModuleName %>.list');
+      vm.<%= slugifiedName %>.update(function(updated){
+        $state.go('<%= slugifiedName %>.list');
       });
     }
   }

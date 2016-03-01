@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    // <%= humanizedModuleName %> module config
+    // <%= humanizedName %> module config
     angular
         .module('<%= slugifiedModuleName %>')
         .run(menuConfig);
@@ -10,8 +10,8 @@
 
     function menuConfig(Menus) {
         Menus.addMenuItem('topbar', {
-            title: '<%= slugifiedModuleName %>',
-            state: '<%= slugifiedModuleName %>.list',
+            title: '<%= pluralizedHumanizedName %>',
+            state: '<%= slugifiedName %>.list',
             roles: ['*'],
             position: 0
         });

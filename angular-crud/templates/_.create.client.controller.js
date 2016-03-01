@@ -3,13 +3,13 @@
 
   angular
     .module('<%= slugifiedModuleName %>')
-    .controller('<%= classifiedControllerName %>CreateController', <%= classifiedControllerName %>CreateController);
+    .controller('<%= classifiedName %>CreateController', <%= classifiedName %>CreateController);
 
-  <%= classifiedControllerName %>CreateController.$inject = ['$scope','$state', '<%= classifiedName %>'];
+  <%= classifiedName %>CreateController.$inject = ['$scope','$state', '<%= classifiedName %>'];
 
-  function <%= classifiedControllerName %>CreateController($scope, $state, <%= classifiedName %>) {
+  function <%= classifiedName %>CreateController($scope, $state, <%= classifiedName %>) {
     var vm = this;
-    vm.<%= slugifiedModuleName %> = new <%= classifiedName %>();
+    vm.<%= slugifiedName %> = new <%= classifiedName %>();
     vm.save = save;
 
     init();
@@ -18,8 +18,8 @@
     }
 
     function save(){
-      vm.<%= slugifiedModuleName %>.$save(function(updated){
-        $state.go('<%= slugifiedModuleName %>.list');
+      vm.<%= slugifiedName %>.$save(function(updated){
+        $state.go('<%= slugifiedName %>.list');
       });
     }
   }
